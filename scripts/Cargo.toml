@@ -13,10 +13,6 @@ name = "update_collateral_assets"
 path = "src/update_collateral_assets.rs"
 
 [[bin]]
-name = "change_proxy_owner"
-path = "src/change_proxy_owner.rs"
-
-[[bin]]
 name = "change_market_owner"
 path = "src/change_market_owner.rs"
 
@@ -44,6 +40,11 @@ path = "src/deploy_pyth.rs"
 name = "fill_reserves"
 path = "src/fill_reserves.rs"
 
+[[bin]]
+name = "withdraw_collateral_assets"
+path = "src/withdraw_collateral_assets.rs"
+
+
 [dependencies]
 fuels = { workspace = true }
 clap = { workspace = true }
@@ -56,6 +57,10 @@ rand = { workspace = true }
 chrono = { workspace = true }
 tai64 = { workspace = true }
 hex = { workspace = true }
+reqwest = { version = "0.11", features = ["json"] }
+pyth_sdk = { workspace = true }
+base64 = "0.22"
+
 
 market = { workspace = true }
 

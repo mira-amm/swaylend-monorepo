@@ -4988,7 +4988,7 @@ dependencies = [
 [[package]]
 name = "pyth_sdk"
 version = "0.1.0"
-source = "git+https://github.com/pyth-network/pyth-crosschain?rev=aa9509ccd37cf5dc73fee891a5730c351d15235f#aa9509ccd37cf5dc73fee891a5730c351d15235f"
+source = "git+https://github.com/pyth-network/pyth-crosschain?rev=7de4ce3ec8defd97641c1d25302abe117bf5092b#7de4ce3ec8defd97641c1d25302abe117bf5092b"
 dependencies = [
  "base64 0.22.1",
  "dotenv",
@@ -5009,7 +5009,7 @@ dependencies = [
 [[package]]
 name = "pythnet-sdk"
 version = "2.3.0"
-source = "git+https://github.com/pyth-network/pyth-crosschain?rev=aa9509ccd37cf5dc73fee891a5730c351d15235f#aa9509ccd37cf5dc73fee891a5730c351d15235f"
+source = "git+https://github.com/pyth-network/pyth-crosschain?rev=7de4ce3ec8defd97641c1d25302abe117bf5092b#7de4ce3ec8defd97641c1d25302abe117bf5092b"
 dependencies = [
  "bincode",
  "borsh",
@@ -6086,6 +6086,7 @@ name = "swaylend-scripts"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "base64 0.22.1",
  "chrono",
  "clap",
  "dotenv",
@@ -6093,7 +6094,9 @@ dependencies = [
  "hex",
  "market",
  "pyth_mock_sdk",
+ "pyth_sdk",
  "rand",
+ "reqwest",
  "serde",
  "serde_json",
  "tai64",
