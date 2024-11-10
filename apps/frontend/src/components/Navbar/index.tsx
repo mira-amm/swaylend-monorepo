@@ -163,13 +163,8 @@ export const Navbar = ({ mobile = false }: { mobile?: boolean }) => {
                   <DropdownMenuItem>
                     <div
                       onMouseDown={() => {
-                        trackExternalPageView(
-                          'https://layerswap.io/app'
-                        );
-                        window.open(
-                          'https://layerswap.io/app',
-                          '_blank'
-                        );
+                        trackExternalPageView('https://layerswap.io/app');
+                        window.open('https://layerswap.io/app', '_blank');
                         setOpenBridge(false);
                       }}
                       rel="noreferrer"
