@@ -164,6 +164,27 @@ export const Navbar = ({ mobile = false }: { mobile?: boolean }) => {
                     <div
                       onMouseDown={() => {
                         trackExternalPageView(
+                          'https://layerswap.io/app'
+                        );
+                        window.open(
+                          'https://layerswap.io/app',
+                          '_blank'
+                        );
+                        setOpenBridge(false);
+                      }}
+                      rel="noreferrer"
+                      className="w-full"
+                    >
+                      <div className="w-full flex items-center justify-between text-md font-medium text-lavender py-1 px-0.5 gap-x-2 cursor-pointer hover:underline">
+                        Layerswap bridge
+                        <ExternalLink className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <div
+                      onMouseDown={() => {
+                        trackExternalPageView(
                           'https://www.orbiter.finance/?source=Ethereum&dest=Fuel&token=ETH'
                         );
                         window.open(
