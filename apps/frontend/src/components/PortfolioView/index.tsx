@@ -47,9 +47,9 @@ export const PortfolioView = () => {
             <TabsTrigger className="max-sm:py-1.5 max-sm:px-6" value="history">
               My Transactions
             </TabsTrigger>
-            {/* <TabsTrigger value="rewards" className="max-sm:py-1.5 max-sm:px-6">
+            <TabsTrigger value="rewards" className="max-sm:py-1.5 max-sm:px-6">
               Rewards
-            </TabsTrigger> */}
+            </TabsTrigger>
           </TabsList>
         </Tabs>
       </div>
@@ -58,7 +58,7 @@ export const PortfolioView = () => {
         {portfolioView === 'markets' && <Markets />}
         {portfolioView === 'positions' && <Overview />}
         {portfolioView === 'history' && <History />}
-        {/* {portfolioView === 'rewards' && <Rewards />} */}
+        {portfolioView === 'rewards' && <Rewards />}
       </div>
     </div>
   );
