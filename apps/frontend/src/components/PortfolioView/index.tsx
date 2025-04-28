@@ -6,7 +6,7 @@ import { Tabs, TabsList, TabsTrigger } from '../ui/tabs';
 import { History } from './History';
 import { Markets } from './Markets';
 import { Overview } from './Overview';
-// import { Rewards } from './Rewards';
+import { Rewards } from './Rewards';
 import { Stats } from './Stats';
 
 export const PortfolioView = () => {
