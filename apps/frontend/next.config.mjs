@@ -1,4 +1,5 @@
 // @ts-check
+import {DOMAINS} from "@microchain/swap/domains"
 
 const CONNECT_DOMAINS = [
   // Swaylend API
@@ -25,6 +26,9 @@ const CONNECT_DOMAINS = [
   'https://hermes.pyth.network',
   // OpenBlock
   'https://www.data-openblocklabs.com',
+
+  // Mira
+  ...DOMAINS
 ];
 
 const CSP_HEADER = `
@@ -32,7 +36,7 @@ const CSP_HEADER = `
     connect-src 'self' https://app.swaylend.com ${CONNECT_DOMAINS.join(' ')};
     script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live;
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-    img-src 'self' blob: data: ;
+    img-src 'self'  blob: data: ${CONNECT_DOMAINS.join(' ')};
     font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
     object-src 'none';
     base-uri 'self';
@@ -43,11 +47,19 @@ const CSP_HEADER = `
 `;
 
 /** @type {import('next').NextConfig} */
-module.exports = (phase, { defaultConfig }) => {
+export default (phase, { defaultConfig }) => {
   /**
    * @type {import('next').NextConfig}
    */
   const nextConfig = {
+    images: {
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "**",
+        },
+      ],
+    },
     /* config options here */
     webpack: (config, _) => {
       // SVGR Config from: https://react-svgr.com/docs/next/
