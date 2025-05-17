@@ -184,41 +184,17 @@ export const Navbar = ({ mobile = false }: { mobile?: boolean }) => {
                   </DropdownMenuItem> */}
                 </DropdownMenuContent>
               </DropdownMenu>
-              <DropdownMenu open={openDex} onOpenChange={setOpenDex}>
-                <DropdownMenuTrigger>
-                  <div className="text-lavender outline-none border-none focus:outline-none focus:border-none hover:text-lavender/80 text-md font-semibold flex items-center gap-x-1">
+                <Link href={"/swap"} prefetch={false}>
+                  <div
+                    className={cn(
+                      pathname === "/swap" ? 'text-primary' : 'text-lavender',
+                      pathname !== "/swap" && 'hover:text-lavender/80',
+                      'flex items-center justify-center text-md font-semibold  min-h-[93px]'
+                    )}
+                  >
                     Swap
-                    <ChevronDown className="w-4 h-4" />
                   </div>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent
-                  onCloseAutoFocus={(e) => e.preventDefault()}
-                >
-                  <DropdownMenuItem>
-                    <div
-                      onMouseDown={() => {
-                        trackExternalPageView('https://mira.ly/');
-                        window.open('https://mira.ly/', '_blank');
-                        setOpenDex(false);
-                      }}
-                      rel="noreferrer"
-                      className="w-full"
-                    >
-                      <div className="w-full flex items-center justify-between text-md font-medium text-lavender py-1 px-0.5 gap-x-2 cursor-pointer hover:underline">
-                        MIRA
-                        <ExternalLink className="w-4 h-4" />
-                      </div>
-                    </div>
-                  </DropdownMenuItem>
-                  {/* <DropdownMenuItem>
-                    <Link href="/swap" className="w-full">
-                      <div className="w-full flex items-center justify-between text-md font-medium text-lavender py-1 px-0.5 gap-x-2 cursor-pointer hover:underline">
-                        Embedded
-                      </div>
-                    </Link>
-                  </DropdownMenuItem> */}
-                </DropdownMenuContent>
-              </DropdownMenu>
+                </Link>
             </div>
           </div>
           <div className="flex items-center gap-x-2">
